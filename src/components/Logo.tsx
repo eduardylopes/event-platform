@@ -1,9 +1,13 @@
-export function Logo() {
+interface LogoProps {
+  height: number;
+}
+
+export function Logo(props: LogoProps) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
       width="237"
-      height="34"
+      height={props.height}
       fill="none"
       viewBox="0 0 237 34"
     >

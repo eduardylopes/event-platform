@@ -29,12 +29,16 @@ export function Lesson(props: LessonProps) {
 
       <div
         className={classNames(
-          "rounded border border-gray-500 p-4 mt-2 group-hover:border-green-500",
+          "rounded border border-gray-500 p-4 mt-2 group-hover:border-green-500 relative",
           {
             "bg-green-500": isActiveLesson,
           }
         )}
       >
+        {isActiveLesson && (
+          <div className="w-[14px] h-[14px] bg-green-500 z-50 absolute rotate-45 left-[-7px] top-[calc(50%-5.89px)]"></div>
+        )}
+
         <header className="flex items-center justify-between">
           {isLessonAvailable ? (
             <span
