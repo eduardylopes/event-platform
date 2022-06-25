@@ -4,21 +4,10 @@ import { Footer } from "../components/Footer";
 import { Header } from "../components/Header";
 import { Sidebar } from "../components/Sidebar";
 import { Video } from "../components/Video";
-import useMediaQuery from "../hooks/useMediaQuery";
 
 export function Event() {
   const { slug } = useParams<{ slug: string }>();
-  const [isSidebarOpen, setIsSidebarOpen] = useState(true);
-
-  const isTablet = useMediaQuery("(max-width: 1024px)");
-
-  useEffect(() => {
-    setIsSidebarOpen(!isSidebarOpen);
-
-    if (isTablet) {
-      setIsSidebarOpen(false);
-    }
-  }, [isTablet]);
+  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
 
   return (
     <div className="flex flex-col min-h-screen">
@@ -31,7 +20,7 @@ export function Event() {
           {slug ? <Video lessonSlug={slug} /> : <div className="flex-1" />}
           <Footer />
         </div>
-        {isSidebarOpen && <Sidebar />}
+        <Sidebar isSidebarOpen={isSidebarOpen} />
       </main>
     </div>
   );
