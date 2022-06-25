@@ -25,9 +25,9 @@ export function Subscribe() {
   }
 
   return (
-    <div className="min-h-screen bg-blur bg-cover bg-no-repeat flex flex-col items-center">
-      <div className="w-full max-w-[1200px] flex items-center justify-between mt-20 mx-auto">
-        <div className="max-w-[640px]">
+    <div className="min-h-screen bg-blur bg-cover bg-no-repeat flex flex-col items-center xl:px-0 md:px-10">
+      <div className="w-full max-w-[1200px] flex flex-col md:flex-row items-center justify-between mt-20 mx-auto">
+        <div className="flex flex-col flex-1 max-w-[640x] mr-5 items-center text-center md:items-start md:text-start xl:mr-[200px] lg:mr-[100px] mx-5 md:mx-0">
           <Logo />
           <h1 className="mt-8 text-[2.5rem] leading-tight">
             Construa uma{" "}
@@ -40,7 +40,7 @@ export function Subscribe() {
             oportunidades do mercado.
           </p>
         </div>
-        <div className="p-8 bg-gray-700 border border-gray-500 rounded">
+        <div className="p-8 bg-gray-700 border border-gray-500 rounded md:mt-0 mt-8 w-full sm:w-auto">
           <strong className="text-2xl mb-6 block">
             Inscreva-se gratuitamente
           </strong>
@@ -72,7 +72,7 @@ export function Subscribe() {
           </form>
         </div>
       </div>
-      <img src={imgUrl} className="mt-10" alt="" />
+      <img src={imgUrl} className="mt-10 px-3 md:px-0" alt="" />
     </div>
   );
 }
