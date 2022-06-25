@@ -1,6 +1,6 @@
 export function Footer() {
   return (
-    <footer className="flex flex-col sm:flex-row border-t border-gray-600 px-8 mt-20 gap-6 h-auto md:h-20 items-center bg-gray-700 w-screen py-6 md:py-0">
+    <footer className="flex flex-col sm:flex-row border-t border-gray-600 px-8 gap-6 h-auto md:h-20 items-center bg-gray-700 w-full py-6 md:py-0">
       <svg
         xmlns="http://www.w3.org/2000/svg"
         width="162"

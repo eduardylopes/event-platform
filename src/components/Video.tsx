@@ -31,9 +31,9 @@ export function Video(props: VideoProps) {
   }
 
   return (
-    <div className="flex-1">
+    <div className="flex flex-col flex-1">
       <div className="bg-black flex justify-center">
-        <div className="h-full w-full max-w-[1100px] max-h-[60vh] aspect-video bg-purple-600">
+        <div className="h-full w-full max-w-[1100px] aspect-vide">
           <Player>
             <Youtube videoId={data.lesson.videoId} />
             <DefaultUi />
@@ -41,8 +41,8 @@ export function Video(props: VideoProps) {
         </div>
       </div>
       <div className="p-8 max-w-[1100px] m-auto">
-        <div className="flex items-start gap-16">
-          <div className="flex-1">
+        <div className="flex items-start gap-16 flex-col xl:flex-row">
+          <div className="flex flex-col flex-1">
             <h1 className="text-2xl font-bold ">{data.lesson.title}</h1>
             <p className="mt-4 text-gray-200 leading-relaxed">
               {data.lesson.description}
@@ -55,7 +55,7 @@ export function Video(props: VideoProps) {
                   src={data.lesson.teacher.avatarURL}
                   alt=""
                 />
-                <div className="leading-relaxed">
+                <div className="leading-relaxed flex flex-col gap-2">
                   <strong className="font-bold text-2xl block">
                     {data.lesson.teacher.name}
                   </strong>
@@ -67,13 +67,13 @@ export function Video(props: VideoProps) {
             )}
           </div>
 
-          <div className="flex flex-col gap-4">
+          <div className="flex flex-row m-auto w-auto gap-4 xl:flex-col xl:m-0">
             <a
               href="#"
               className="p-4 text-sm bg-green-500 flex items-center rounded font-bold uppercase gap-2 justify-center hover:bg-green-700 transition-colors"
             >
               <DiscordLogo size={24} />
-              Comunidade do Discord
+              <p>Comunidade do Discord</p>
             </a>
 
             <a
@@ -86,7 +86,7 @@ export function Video(props: VideoProps) {
           </div>
         </div>
 
-        <div className="gap-8 mt-20 grid grid-cols-2">
+        <div className="gap-8 mt-20 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-1 xl:grid-cols-2 w-full">
           <a
             href="#"
             className="bg-gray-700 rounded overflow-hidden flex items-stretch gap-6 hover:bg-gray-600 transition-colors"
@@ -101,7 +101,7 @@ export function Video(props: VideoProps) {
                 desenvolvimento
               </p>
             </div>
-            <div className="h-full p-6 flex items-center">
+            <div className="h-full p-6 flex items-center ml-auto">
               <CaretRight size={24} />
             </div>
           </a>
@@ -119,7 +119,7 @@ export function Video(props: VideoProps) {
                 máquina
               </p>
             </div>
-            <div className="h-full p-6 flex items-center">
+            <div className="h-full p-6 flex items-center ml-auto">
               <CaretRight size={24} />
             </div>
           </a>
