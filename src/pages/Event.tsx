@@ -20,7 +20,10 @@ export function Event() {
           {slug ? <Video lessonSlug={slug} /> : <div className="flex-1" />}
           <Footer />
         </div>
-        <Sidebar isSidebarOpen={isSidebarOpen} />
+        <Sidebar
+          isSidebarOpen={isSidebarOpen}
+          onToggleSidebar={() => setIsSidebarOpen(!isSidebarOpen)}
+        />
       </main>
     </div>
   );
