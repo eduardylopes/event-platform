@@ -4,9 +4,10 @@ import { Lesson } from "./Lesson";
 
 interface SidebarProps {
   isSidebarOpen: boolean;
+  onToggleSidebar: () => void;
 }
 
-export function Sidebar({ isSidebarOpen }: SidebarProps) {
+export function Sidebar({ isSidebarOpen, onToggleSidebar }: SidebarProps) {
   const { data } = useGetLessonsQuery();
 
   return (
@@ -32,6 +33,7 @@ export function Sidebar({ isSidebarOpen }: SidebarProps) {
               slug={lesson.slug}
               availableAt={new Date(lesson.availableAt)}
               type={lesson.lessonType}
+              onToggleSidebar={onToggleSidebar}
             />
           );
         })}

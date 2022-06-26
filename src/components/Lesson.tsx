@@ -9,6 +9,7 @@ interface LessonProps {
   slug: string;
   availableAt: Date;
   type: "live" | "class";
+  onToggleSidebar: () => void;
 }
 
 export function Lesson(props: LessonProps) {
@@ -24,7 +25,11 @@ export function Lesson(props: LessonProps) {
   const isActiveLesson = slug === props.slug;
 
   return (
-    <Link to={`/event/lesson/${props.slug}`} className="group">
+    <Link
+      to={`/event/lesson/${props.slug}`}
+      className="group"
+      onClick={() => props.onToggleSidebar()}
+    >
       <span className="text-gray-300">{availableDateFormatted}</span>
 
       <div
@@ -36,7 +41,7 @@ export function Lesson(props: LessonProps) {
         )}
       >
         {isActiveLesson && (
-          <div className="w-[14px] h-[14px] bg-green-500 z-50 absolute rotate-45 left-[-7px] top-[calc(50%-5.89px)]"></div>
+          <div className="w-[14px] h-[14px] bg-green-500 z-50 absolute rotate-45 left-[-7px] top-[calc(50%-5.89px)] hidden lg:block"></div>
         )}
 
         <header className="flex items-center justify-between">
