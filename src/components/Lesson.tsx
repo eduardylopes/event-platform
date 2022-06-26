@@ -9,7 +9,7 @@ interface LessonProps {
   slug: string;
   availableAt: Date;
   type: "live" | "class";
-  onToggleSidebar: () => void;
+  onToggleSidebar?: () => void;
 }
 
 export function Lesson(props: LessonProps) {
@@ -22,13 +22,19 @@ export function Lesson(props: LessonProps) {
     { locale: ptBR }
   );
 
+  function handleOnToggleSidebar() {
+    if (props.onToggleSidebar) {
+      props.onToggleSidebar();
+    }
+  }
+
   const isActiveLesson = slug === props.slug;
 
   return (
     <Link
       to={`/event/lesson/${props.slug}`}
       className="group"
-      onClick={() => props.onToggleSidebar()}
+      onClick={handleOnToggleSidebar}
     >
       <span className="text-gray-300">{availableDateFormatted}</span>
 

@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { useParams } from "react-router-dom";
 import { Footer } from "../components/Footer";
 import { Header } from "../components/Header";
@@ -20,10 +20,7 @@ export function Event() {
           {slug ? <Video lessonSlug={slug} /> : <div className="flex-1" />}
           <Footer />
         </div>
-        <Sidebar
-          isSidebarOpen={isSidebarOpen}
-          onToggleSidebar={() => setIsSidebarOpen(!isSidebarOpen)}
-        />
+        <Sidebar isSidebarOpen={isSidebarOpen} />
       </main>
     </div>
   );

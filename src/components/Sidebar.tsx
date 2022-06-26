@@ -4,7 +4,7 @@ import { Lesson } from "./Lesson";
 
 interface SidebarProps {
   isSidebarOpen: boolean;
-  onToggleSidebar: () => void;
+  onToggleSidebar?: () => void;
 }
 
 export function Sidebar({ isSidebarOpen, onToggleSidebar }: SidebarProps) {
